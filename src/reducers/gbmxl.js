@@ -11,13 +11,13 @@ export default (state = gbXMLDefaultState, action) => {
   switch (action.type) {
     case 'TOGGLE':
       return {
-        ... state,
+        ...state,
         [action.toggle.name]: action.toggle.bool
       }
 
     case 'LOAD_STRING':
       return {
-        ... state,
+        ...state,
         string: action.string
       }
 

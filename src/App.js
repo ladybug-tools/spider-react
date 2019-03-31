@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import Tooltip from './components/Tooltip';
 import BottomNav from './components/BottomNav';
 import Renderer from './components/Renderer';
 // import Drawer from './components/Drawer'
 import Drawer from './components/DrawerFunction'
 import AppBar from './components/AppBar'
-import SwitchGroup from './components/SwitchGroup'
 import UploadDialog from './components/UploadDialog';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
