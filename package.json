@@ -1,12 +1,14 @@
 {
   "name": "spider-react",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://www.ladybug.tools/spider-react",
   "dependencies": {
     "@ladybug-tools/spider-core": "^1.0.0",
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-redux": "^6.0.1",
@@ -25,7 +27,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

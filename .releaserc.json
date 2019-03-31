@@ -4,7 +4,7 @@
         "@semantic-release/release-notes-generator",
         "@semantic-release/github",
         ["@semantic-release/exec", {
-            "publishCmd": "npm run build"
+            "publishCmd": "npm run deploy"
         }]
     ]
 }
