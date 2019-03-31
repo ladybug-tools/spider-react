@@ -1,5 +1,5 @@
 # Spider-React
-A React implementation of the Ladybug-Tools/Spider project. 
+A React implementation of the Ladybug-Tools/Spider project. Check the latest build of the master branch [here](http://www.ladybug.tools/spider-react/).
 
 
 # Create React App Blurb
