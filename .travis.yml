@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '11'
+jobs:
+  include:
+  - stage: docs
+    if: branch = master AND (NOT type IN (pull_request))
+    script: npm run semantic-release
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github-token: "$GH_TOKEN"
+      keep-history: true
+      local_dir: build/
+      on:
+        branch: master
+env:
+  global:
+    secure: lBoKX5fv5gJYwBBkY1FLnwlpkaKXRILg8uQHiJbtqE77cUA/8g6AwKpZ+o8TZM2B4MGfXb32osNqcfJMPHcS8PwGumAsLiEDcwaEJv4R91zG1aAT/fictEjq66zzTnT9Co4wxv7zr1lbmmSIu/9U2K8eYxSaFWWnpWQlYGM+DWNgjLK8qoItE98n/L/rEJ2RIklveHY7n0PUt1AmtWHv6VLtDIhzFVVuZmviXcEFUMHRS3hlkdVY1NH64gRLJhkI1f4yyiQJHCvZF69FPJsV6HAsQ5/8RRtSZzmbbU9zQo7VXfQpJVI1gVs3iCSPz/HbqVbPRN2IHLRFGtyrCvp+UGvtlikDHueaDtFoiabe/HmgYHaqRwdAAi2o8+r28s6IQn5To6UCsJzOddlMuOFPyIPUml6Q/14WGlEGwbzL73ZcleF6qzq7E12RJzXx3u2lAQ1J1weIl1+foYLhQyNJYkqYQtlJwa5SZaYjGVn5hTXrLkzpVeHH4mw/mrm4CMVZZZQbwerVjzxQ+mH9hWznzWMo+m31SuWjlYwWCsdEYUjxtpbpHH5l59wDm+X5vxwErWxE4TZivL0Gzlji/5TdFVTgpAtAKOQtnz7ZcjQ2FdxQIFMbE+u7FQC9D0WX0uhgTM2FXdrTpBuSN1BIx3qJlaQYmNbGyJtz2CfnN9cX+h4=
