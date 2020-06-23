@@ -1,0 +1,71 @@
+{
+  "name": "storybook-typescript-react-library",
+  "version": "1.2.0",
+  "main": "build/lib/index.js",
+  "types": "build/lib/index.d.ts",
+  "files": [
+    "build/lib"
+  ],
+  "scripts": {
+    "start": "start-storybook",
+    "build": "npm run lint && npm run build-lib && build-storybook",
+    "build-lib-watch": "tsc -w",
+    "build-lib": "tsc && npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
+    "storybook": "start-storybook -p 6006",
+    "deploy-storybook": "storybook-to-ghpages",
+    "test": "jest",
+    "test:coverage": "npm test -- --coverage",
+    "test:update": "npm test -- --u --coverage",
+    "build-storybook": "-c .storybook -o .out",
+    "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
+    "copy-woff2-to-lib": "cpx \"./src/**/*.woff2\" ./build/lib",
+    "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
+    "copy-png-to-lib": "cpx \"./src/**/*.png\" ./build/lib",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix"
+  },
+  "dependencies": {
+    "@storybook/addon-actions": "^5.3.7",
+    "@storybook/addon-info": "^5.3.7",
+    "@storybook/addon-knobs": "^5.3.7",
+    "@storybook/addon-links": "^5.3.7",
+    "@storybook/addon-options": "^5.3.7",
+    "@storybook/react": "^5.3.7",
+    "react": "^16.8.6",
+    "react-three-fiber": "^3.0.17",
+    "three": "^0.112.1",
+    "three-orbit-controls": "^82.1.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@storybook/storybook-deployer": "^2.8.5",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.2",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.3",
+    "@types/react-test-renderer": "^16.8.1",
+    "@types/storybook-addon-jsx": "^5.4.3",
+    "@types/storybook__addon-actions": "^3.4.2",
+    "@types/storybook__addon-info": "^4.1.1",
+    "@types/storybook__addon-knobs": "^4.0.5",
+    "@types/storybook__addon-links": "^3.3.4",
+    "@types/storybook__react": "^4.0.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.4",
+    "cpx": "^1.5.0",
+    "jest": "^24.7.1",
+    "npm": "^6.4.1",
+    "react-docgen-typescript-loader": "^3.1.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "tachyons": "^4.10.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.2"
+  }
+}
