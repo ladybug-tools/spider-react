@@ -17,8 +17,13 @@ jobs:
       with:
         node-version: 10.13.0
     - run: npm install
-    - run: npm run deploy-storybook
-#     - name: Publish package to TestPyPI
+    - run: npx build-storybook
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./storybook-static
+#        - name: Publish package to TestPyPI
 #       uses: pypa/gh-action-pypi-publish@master
 #       with:
 #         user: ${{ secrets.PYPI_USER }}
