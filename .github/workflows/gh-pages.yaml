@@ -30,4 +30,100 @@ jobs:
 #         password: ${{ secrets.PYPI_PASSWORD }}
 #         repository_url: https://some.private.repo.org/legacy/
 
+# Change values above once a private repo has been set upname: CD
+
+on:
+  push:
+    branches:    
+      - master   
+
+jobs:
+  storybook:
+    name: "Publish to GH Pages"
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 10.13.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.13.0
+    - run: npm install
+    - run: npx build-storybook
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./storybook-static
+#        - name: Publish package to TestPyPI
+#       uses: pypa/gh-action-pypi-publish@master
+#       with:
+#         user: ${{ secrets.PYPI_USER }}
+#         password: ${{ secrets.PYPI_PASSWORD }}
+#         repository_url: https://some.private.repo.org/legacy/
+
+# Change values above once a private repo has been set upname: CD
+
+on:
+  push:
+    branches:    
+      - master   
+
+jobs:
+  storybook:
+    name: "Publish to GH Pages"
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 10.13.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.13.0
+    - run: npm install
+    - run: npx build-storybook
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./storybook-static
+#        - name: Publish package to TestPyPI
+#       uses: pypa/gh-action-pypi-publish@master
+#       with:
+#         user: ${{ secrets.PYPI_USER }}
+#         password: ${{ secrets.PYPI_PASSWORD }}
+#         repository_url: https://some.private.repo.org/legacy/
+
+# Change values above once a private repo has been set upname: CD
+
+on:
+  push:
+    branches:    
+      - master   
+
+jobs:
+  storybook:
+    name: "Publish to GH Pages"
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 10.13.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.13.0
+    - run: npm install
+    - run: npx build-storybook
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./storybook-static
+#        - name: Publish package to TestPyPI
+#       uses: pypa/gh-action-pypi-publish@master
+#       with:
+#         user: ${{ secrets.PYPI_USER }}
+#         password: ${{ secrets.PYPI_PASSWORD }}
+#         repository_url: https://some.private.repo.org/legacy/
+
 # Change values above once a private repo has been set up
